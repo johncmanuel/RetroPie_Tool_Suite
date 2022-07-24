@@ -1,0 +1,29 @@
+{
+    "SQLDatabase": [
+        {
+            "Name": "FOO",
+            "Type": "OnPrem",
+            "Ensure": "Present"
+        }
+    ],
+    "ADUser": [
+        {
+            "Name": "jjones",
+            "DnsDomainName": "lab.local"
+        }
+    ],
+    "ADGroup": [
+        {
+            "Name": "mygroup",
+            "Scope": "DomainLocal",
+            "DnsDomainName": "lab.local",
+            "Members": [
+                {
+                    "Name": "jjones",
+                    "Type": "User",
+                    "DnsDomainName": "lab.local"
+                }
+            ]
+        }
+    ]
+}
