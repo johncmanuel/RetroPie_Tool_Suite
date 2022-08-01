@@ -12,7 +12,19 @@ By John Carlo Manuel & Emmanuel Flores
 
 ## Preparations
 
-Before following the instructions below, **please make sure your Raspberry Pi is powered on!** 
+Before following the instructions below, **please make sure your Raspberry Pi is powered on!**
+
+### Bash Only
+In `insert_roms.bash`, adjust the USERNAME, PASSWORD, and ADDR (IP address of your Raspberry Pi) accordingly.
+
+```
+...
+USERNAME=your-pi-username
+PASSWORD=your-pi-password
+ADDR=your-pi-ip-address
+...
+```
+---
 
 Set up public / private RSA key pair:
 
@@ -31,7 +43,7 @@ Install [**rsync**](https://en.wikipedia.org/wiki/Rsync):
 
 `$ sudo apt install rsync`
 
-Run **create_sys_folders.bash**
+Next, run **create_sys_folders.bash**.
 
 `$ bash create_sys_folders.bash`
 

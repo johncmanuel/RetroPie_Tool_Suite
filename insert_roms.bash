@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Set up necessary info
+# Username, password, and IP address may vary, so adjust them as needed
 USERNAME=pi
 PASSWORD=raspberry
 ADDR=192.168.1.43
@@ -66,7 +67,7 @@ copy_roms_to_pi () {
   done
 }
 
-# Loop through system folders and scp each file to the dst folder and its subfolders
+# Loop through system folders and rsync each ROM to the dst folder and its subfolders
 if [[ $TEST_FLAG = 'true' ]]; then
   copy_roms_to_pi "$TEST_START" "$TEST_END"
 else
