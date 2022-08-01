@@ -54,12 +54,21 @@ copy_roms_to_pi () {
           if [[ $TEST_FLAG = 'true' ]]; then
             DST="./${ROM/$1/$2}"
             cp "./$ROM" "$DST"
-            echo "cp: Added '${ROM##*/}' to '$DST'"
+            # If the ROMs are already added, print a warning
+            if cmp --silent "$ROM" "$DST"; then
+              echo "cp: WARNING - '${ROM##*/}' is already added in '$DST'"
+            else
+              echo "cp: Added '${ROM##*/}' to '$DST'"
+            fi
           else
             DST="$USERNAME@$ADDR:$RETROPIE_PATH/$ROM"
             DST="${DST/$1/$ROMS_FOLDER}"
             rsync -a --ignore-existing "$ROM" "$DST"
-            echo "rsync: Added '${ROM##*/}' to '$DST'"
+            if cmp --silent "$ROM" "$DST"; then
+              echo "rsync: WARNING - '${ROM##*/}' is already added in '$DST'"
+            else
+              echo "rsync: Added '${ROM##*/}' to '$DST'"
+            fi
           fi
         fi
       done
