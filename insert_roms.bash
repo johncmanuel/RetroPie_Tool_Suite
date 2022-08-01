@@ -30,12 +30,6 @@ while getopts 't' flag; do
   esac
 done
 
-echo " "
-echo "*********************"
-echo "Adding your ROMS to your respective system..."
-echo "*********************"
-echo " "
-
 # Parameters:
 # $1 Start Folder
 # $2 End Folder
@@ -56,18 +50,18 @@ copy_roms_to_pi () {
             cp "./$ROM" "$DST"
             # If the ROMs are already added, print a warning
             if cmp --silent "$ROM" "$DST"; then
-              echo "cp: WARNING - '${ROM##*/}' is already added in '$DST'"
+              echo "TEST: WARNING - '${ROM##*/}' is already added in '$DST'"
             else
-              echo "cp: Added '${ROM##*/}' to '$DST'"
+              echo "TEST: Added '${ROM##*/}' to '$DST'"
             fi
           else
             DST="$USERNAME@$ADDR:$RETROPIE_PATH/$ROM"
             DST="${DST/$1/$ROMS_FOLDER}"
             rsync -a --ignore-existing "$ROM" "$DST"
             if cmp --silent "$ROM" "$DST"; then
-              echo "rsync: WARNING - '${ROM##*/}' is already added in '$DST'"
+              echo "PROD: WARNING - '${ROM##*/}' is already added in '$DST'"
             else
-              echo "rsync: Added '${ROM##*/}' to '$DST'"
+              echo "PROD: Added '${ROM##*/}' to '$DST'"
             fi
           fi
         fi
