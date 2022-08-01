@@ -3,8 +3,11 @@ atari800|.zip
 atari2600|.bin .a26 .rom
 atari5200|.a52 .bas .bin .xex .atr .xfd .dcm .atr.gz .xfd.gz
 atari7800|.a78 .bin
+atarilynx|.7z .lnx .zip
 arcade|.zip .7z
 coleco|.bin .col .rom .zip
+fba|.7z .zip
+fds|.7z .fds .nes .zip
 gamegear|.7z .bin .gg .sms .zip
 gb|.7z .gb .zip	
 gba|.7z .gba .zip
@@ -22,6 +25,7 @@ ngpc|.7z .ngc .zip
 pcengine|.7z .ccd .chd .cue .pce .zip
 psx|.cbn .cue .img .iso .m3u .mdf .pbp .toc .z .znx
 sega32x|.32x .7z .bin .md .smd .zip	
+segacd|.bin .chd .cue .iso .m3u
 sg-1000|.7z .bin .sg .zip	
 snes|.7z .bin .fig .mgd .sfc .smc .swc .zip
 vectrex|.7z .bin .gam .vec .zip	
