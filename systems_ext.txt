@@ -17,7 +17,8 @@ mame-libretro|.zip
 mastersystem|.7z .bin .sms .zip	
 megadrive|.7z .bin .gen .md .sg .smd .zip	
 msx|.col .dsk .mx1 .mx2 .rom
-n64|.n64 .v64 .z64 .zip	
+n64|.n64 .v64 .z64 .zip
+nds|.nds .zip
 neogeo|.7z .zip
 nes|.7z .fds .fig .mgd .nes .sfc .smc .swc .zip
 ngp|.7z .ngp .zip
